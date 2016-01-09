@@ -1,4 +1,5 @@
 points = new Meteor.Collection('pointsCollection');
+secondPicture = new Meteor.Collection('secondPoints');
 var canvas;
 
 // we use these for drawing more interesting shapes
@@ -11,7 +12,7 @@ var strokeColor = "black";
 
 Meteor.startup( function() {
   canvas = new Canvas();
-
+  points.insert({save: "no"});
   Deps.autorun( function() {
     var data = points.find({}).fetch();
 
@@ -143,6 +144,12 @@ Template.wall.events({
     strokeColor = "#DAA520";
   },
 
+   "click button.thin": function () {
+
+    thickness = 3;
+    Session.set('currentThickness', thickness);
+  },
+
   "click button.thicker": function () {
 
     thickness+=1;
@@ -188,7 +195,6 @@ var markPoint = function() {
         //1) Algorithmic mouse follower
       // x: (event.pageX - offset.left)+(Math.cos((event.pageX/10  ))*30),
       // y: (event.pageY - offset.top)+(Math.sin((event.pageY)/10)*30)});
-
         //2) draw a line - requires you to change the code in drawing.js
         x: (event.pageX - offset.left),
         y: (event.pageY - offset.top),

@@ -8,10 +8,17 @@
 
 <template name="wall">
 <div class="container-fluid">
+<button class='clear btn btn-warning'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+<span class="label label-info">Brushes:</span>
+  <button class='thin btn btn-success'><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></button>
+    <button class='thicker btn btn-success'><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+
+  <span class="label label-info marker_thickness">{{currentThickness}}</span>
+  <button class='thinner btn btn-danger'><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></button>
+  <br/><br/>
 <div class="row">
 <div class="buttons col-md-3">
   <h1>{{title}}</h1>
-  <button class='clear btn btn-warning'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button><br/><br/>
 
 
   <button class='white btn btn-default'></button> &nbsp; <button class='brown btn btn-default'></button>
@@ -33,14 +40,8 @@
   <button class='yellow btn btn-default'></button>&nbsp; <button class='dark_red btn btn-default'></button><br/><br/>
 
 
-  <button class='orange btn btn-default'></button>&nbsp; <button class='LightCyan btn btn-default'></button><br/><br/>
+  <button class='orange btn btn-default'></button>&nbsp; <button class='LightCyan btn btn-default'></button>
 
-
-  <button class='thicker btn btn-success'><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
-
-
-  <span class="label label-info marker_thickness">{{currentThickness}}</span>
-  <button class='thinner btn btn-danger'><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></button>
   </div><!-- / col-md-3 -->
 
   <div class="canvas col-md-9">

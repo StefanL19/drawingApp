@@ -1,3 +1,6 @@
+
+
+
 Canvas = function () {
   var self = this;
   var svg;
@@ -21,17 +24,20 @@ Canvas = function () {
     }
     if (svg) {
 
-        // Remember to format the data properly in markPoints
+          // Remember to format the data properly in markPoints
 
         // to draw a circle - 
         // svg.selectAll('circle').data(data, function(d) { return d._id; })
         // .enter().append('circle')
         // .attr('r', 10)
         // .attr('cx', function (d) { return d.x; })
-        // .attr('cy', function (d) { return d.y; });
+         //.attr('cy', function (d) { return d.y; });
 
       //to draw a line
-      svg.selectAll('line').data(data, function(d) { return d._id; })
+
+      
+
+        svg.selectAll('line').data(data, function(d) { return d._id; })
       .enter().append('line')
       .attr('x1', function (d) { return d.x; })
       .attr('y1', function (d) { return d.y; })
