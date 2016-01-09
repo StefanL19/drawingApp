@@ -27,3 +27,60 @@
 	height: 50px;
 	width: 50px;
 }
+.yellow{
+	background-color: yellow !important; 
+	height: 50px;
+	width: 50px;
+}
+.orange{
+	background-color: orange !important; 
+	height: 50px;
+	width: 50px;
+}
+.grey{
+	background-color: grey !important; 
+	height: 50px;
+	width: 50px;
+}
+.brown{
+	background-color: brown !important; 
+	height: 50px;
+	width: 50px;
+}
+.azure{
+	background-color: #00FFFF !important; 
+	height: 50px;
+	width: 50px;
+}
+.purple{
+	background-color: #FF0099 !important; 
+	height: 50px;
+	width: 50px;
+}
+.light_green{
+	background-color: #33FF00 !important; 
+	height: 50px;
+	width: 50px;
+}
+.dark_red{
+	background-color: #990000 !important; 
+	height: 50px;
+	width: 50px;
+}
+.LightCyan{
+	background-color: #E0FFFF!important; 
+	height: 50px;
+	width: 50px;
+}
+
+.salmon{
+	background-color: #FA8072 !important; 
+	height: 50px;
+	width: 50px;
+}
+
+.goldenRod{
+	background-color: #DAA520 !important; 
+	height: 50px;
+	width: 50px;
+}

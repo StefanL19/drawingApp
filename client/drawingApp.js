@@ -53,6 +53,36 @@ Template.wall.events({
     strokeColor = "red";
   },
 
+  "click button.yellow": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "yellow";
+  },
+
+  "click button.brown": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "brown";
+  },
+
+  "click button.grey": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "grey";
+  },
+
+  "click button.orange": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "orange";
+  },
+
+   "click button.azure": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#00FFFF";
+  },
+
   "click button.black": function () {
     lastX=0;
     lastY=0;
@@ -75,6 +105,42 @@ Template.wall.events({
     lastX=0;
     lastY=0;
     strokeColor = "green";
+  },
+
+  "click button.purple": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#FF0099";
+  },
+//
+  "click button.light_green": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#33FF00";
+  },
+
+  "click button.dark_red": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#990000";
+  },
+
+  "click button.LightCyan": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#E0FFFF";
+  },
+
+  "click button.salmon": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#FA8072";
+  },
+
+  "click button.goldenRod": function () {
+    lastX=0;
+    lastY=0;
+    strokeColor = "#DAA520";
   },
 
   "click button.thicker": function () {
