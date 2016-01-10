@@ -150,7 +150,7 @@ Template.wall.events({
 
    "click button.thin": function () {
 
-    thickness = 3;
+    thickness = 1;
     Session.set('currentThickness', thickness);
   },
 
