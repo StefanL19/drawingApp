@@ -84,3 +84,9 @@
 	height: 50px;
 	width: 50px;
 }
+.css-fucntions{
+	font-size: 15px !important;
+}
+#canvas{
+	border:1px solid black;
+}

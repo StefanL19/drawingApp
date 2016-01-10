@@ -154,6 +154,12 @@ Template.wall.events({
     Session.set('currentThickness', thickness);
   },
 
+  "click button.solid": function () {
+
+    thickness = 15;
+    Session.set('currentThickness', thickness);
+  },
+
   "click button.thicker": function () {
 
     thickness+=1;
