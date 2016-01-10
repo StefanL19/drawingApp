@@ -12,7 +12,6 @@ var strokeColor = "black";
 
 Meteor.startup( function() {
   canvas = new Canvas();
-  points.insert({save: "no"});
   Deps.autorun( function() {
     var data = points.find({}).fetch();
 
@@ -20,6 +19,11 @@ Meteor.startup( function() {
       canvas.draw(data);
     }
   });
+});
+
+$( document ).ready(function() {
+  setTimeout(function(){ $(".circle").click(); }, 3000);
+    $(".line").click();
 });
 
 
@@ -165,9 +169,18 @@ Template.wall.events({
     }
   },
 
+    "click .circle":function(event){
+      Session.set("form", "circle");
+    },
+
+    "click .line":function(event){
+      Session.set("form", undefined);
+    }
+  
 
 
-})
+
+});
 
 var markPoint = function() {
 
@@ -181,7 +194,25 @@ var markPoint = function() {
         lastX = (event.pageX - offset.left);
         lastY = (event.pageY - offset.top);
       }
-      points.insert({
+      if (Session.get("form") == "circle") {
+       form = Session.get("form");
+      }
+      else{
+        form = "line";
+      }
+      if (Session.get("form") == "circle") {
+
+          points.insert({
+              xCircle: (event.pageX - offset.left),
+              yCircle: (event.pageY - offset.top),
+              c: strokeColor,
+              w: thickness,
+          })
+
+        }
+        else{
+
+          points.insert({
         //this draws a point exactly where you click the mouse
       // x: (event.pageX - offset.left),
       // y: (event.pageY - offset.top)});
@@ -196,10 +227,10 @@ var markPoint = function() {
       // x: (event.pageX - offset.left)+(Math.cos((event.pageX/10  ))*30),
       // y: (event.pageY - offset.top)+(Math.sin((event.pageY)/10)*30)});
         //2) draw a line - requires you to change the code in drawing.js
-        x: (event.pageX - offset.left),
-        y: (event.pageY - offset.top),
-        x1: lastX,
-        y1: lastY,
+        xLine: (event.pageX - offset.left),
+        yLine: (event.pageY - offset.top),
+        x1Line: lastX,
+        y1Line: lastY,
         // We could calculate the line thickness from the distance
         // between current position and last position
         //w: 0.05*(Math.sqrt(((event.pageX - offset.left)-lastX) * (event.pageX - offset.left)
@@ -208,9 +239,13 @@ var markPoint = function() {
         w: thickness,
         // We can also use strokeColor, defined by a selection
         c: strokeColor,
+        t:form
 
 
       }); // end of points.insert()
+
+        }
+      
 
         lastX = (event.pageX - offset.left);
         lastY = (event.pageY - offset.top);
